@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.8 on win32)" generated="20241203 13:18:50.287" rpa="false" schemaversion="4">
+<suite id="s1" name="Tasks" source="C:\Users\rafan\Documents\GitHub\Template Robot Framework\tasks">
+<suite id="s1-s1" name="Test Main" source="C:\Users\rafan\Documents\GitHub\Template Robot Framework\tasks\test_main.robot">
+<test id="s1-s1-t1" name="Feature: User Login" line="11">
+<kw name="Given que eu acesso a página de login" library="acme_gherk">
+<kw name="Abrir o Site" library="acme">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Abrindo o Navegador ${BROWSER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241203 13:18:50.892" endtime="20241203 13:18:50.894"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241203 13:18:50.894" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000286F005A650&gt;</msg>
+<status status="PASS" starttime="20241203 13:18:50.894" endtime="20241203 13:18:50.894"/>
+</kw>
+<kw name="Set Download Preferences" library="acme">
+<var>${options}</var>
+<arg>${options}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${prefs}</var>
+<arg>download.prompt_for_download=False</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20241203 13:18:50.895" level="INFO">${prefs} = {'download.prompt_for_download': 'False'}</msg>
+<status status="PASS" starttime="20241203 13:18:50.894" endtime="20241203 13:18:50.895"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241203 13:18:50.895" endtime="20241203 13:18:50.895"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241203 13:18:50.895" endtime="20241203 13:18:50.895"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241203 13:18:50.895" endtime="20241203 13:18:50.895"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241203 13:18:50.895" endtime="20241203 13:18:50.895"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241203 13:18:50.895" endtime="20241203 13:18:50.895"/>
+</kw>
+<return>
+<value>${options}</value>
+<status status="PASS" starttime="20241203 13:18:50.895" endtime="20241203 13:18:50.895"/>
+</return>
+<msg timestamp="20241203 13:18:50.896" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000286F005A650&gt;</msg>
+<status status="PASS" starttime="20241203 13:18:50.894" endtime="20241203 13:18:50.896"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<var>${DRIVER}</var>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20241203 13:18:50.896" level="INFO">Opening browser 'chrome' to base url 'https://acme-test.uipath.com/login'.</msg>
+<msg timestamp="20241203 13:18:54.348" level="INFO">${DRIVER} = 1</msg>
+<status status="PASS" starttime="20241203 13:18:50.896" endtime="20241203 13:18:54.348"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Navegador ${BROWSER} com sucesso</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241203 13:18:54.348" endtime="20241203 13:18:54.349"/>
+</kw>
+<status status="PASS" starttime="20241203 13:18:50.892" endtime="20241203 13:18:54.349"/>
+</kw>
+<status status="PASS" starttime="20241203 13:18:50.892" endtime="20241203 13:18:54.349"/>
+</kw>
+<kw name="When eu insiro credenciais válidas" library="acme_gherk">
+<arg>${email}</arg>
+<arg>${senha}</arg>
+<kw name="Logon" library="acme">
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Inicio Logon</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241203 13:18:54.350" endtime="20241203 13:18:54.350"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:email</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241203 13:18:54.350" level="INFO">Typing text 'joao.andrade@db.tec.br.upc' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20241203 13:18:54.350" endtime="20241203 13:18:54.472"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241203 13:18:54.473" level="INFO">Typing text '@Chamexmu963' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20241203 13:18:54.472" endtime="20241203 13:18:54.554"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=/html/body/div/div[2]/div/div/div/form/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20241203 13:18:54.555" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/div/form/button'.</msg>
+<status status="PASS" starttime="20241203 13:18:54.554" endtime="20241203 13:18:58.683"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fim Logon</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241203 13:18:58.683" endtime="20241203 13:18:58.683"/>
+</kw>
+<status status="PASS" starttime="20241203 13:18:54.349" endtime="20241203 13:18:58.684"/>
+</kw>
+<status status="PASS" starttime="20241203 13:18:54.349" endtime="20241203 13:18:58.684"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:08.689" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20241203 13:18:58.684" endtime="20241203 13:19:08.689"/>
+</kw>
+<kw name="Then devo ver o painel do usuário" library="acme_gherk">
+<arg>${email}</arg>
+<kw name="Carregar Site" library="acme">
+<arg>${USERNAME}</arg>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//h1/strong[text()='${USERNAME}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241203 13:19:08.703" level="INFO">Element 'xpath=//h1/strong[text()='joao.andrade@db.tec.br.upc']' is displayed.</msg>
+<status status="PASS" starttime="20241203 13:19:08.690" endtime="20241203 13:19:08.704"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:08.689" endtime="20241203 13:19:08.704"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:08.689" endtime="20241203 13:19:08.704"/>
+</kw>
+<doc>Cenário: Login Bem-Sucedido</doc>
+<status status="PASS" starttime="20241203 13:18:50.891" endtime="20241203 13:19:08.704"/>
+</test>
+<test id="s1-s1-t2" name="Feature: Work Items" line="18">
+<kw name="Given devo ver o painel do usuário" library="acme_gherk">
+<arg>${email}</arg>
+<kw name="Carregar Site" library="acme">
+<arg>${USERNAME}</arg>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//h1/strong[text()='${USERNAME}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241203 13:19:08.717" level="INFO">Element 'xpath=//h1/strong[text()='joao.andrade@db.tec.br.upc']' is displayed.</msg>
+<status status="PASS" starttime="20241203 13:19:08.705" endtime="20241203 13:19:08.717"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:08.705" endtime="20241203 13:19:08.717"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:08.705" endtime="20241203 13:19:08.717"/>
+</kw>
+<kw name="Then devo ir ate a pagina de workitems" library="acme_gherk">
+<kw name="Ir ate Work Items" library="acme" sourcename="Ir ate ${Work Items}">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//button[contains(normalize-space(.), "${Work Items}")]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:08.718" level="INFO">Clicking button 'xpath=//button[contains(normalize-space(.), "Work Items")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:08.717" endtime="20241203 13:19:10.989"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:08.717" endtime="20241203 13:19:10.989"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:08.717" endtime="20241203 13:19:10.989"/>
+</kw>
+<doc>Cenário: Ir até página de work items</doc>
+<status status="PASS" starttime="20241203 13:19:08.704" endtime="20241203 13:19:10.989"/>
+</test>
+<test id="s1-s1-t3" name="Feature: Baixar PDF" line="24">
+<kw name="Given devo ver a pagina de Work Items" library="acme_gherk" sourcename="devo ver a pagina de ${PAGINA}">
+<kw name="Ler título da pagina" library="acme">
+<arg>${PAGINA}</arg>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//h1[contains(normalize-space(), '${titulo}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20241203 13:19:11.005" level="INFO">Element '//h1[contains(normalize-space(), 'Work Items')]' is displayed.</msg>
+<status status="PASS" starttime="20241203 13:19:10.991" endtime="20241203 13:19:11.005"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:10.990" endtime="20241203 13:19:11.005"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:10.990" endtime="20241203 13:19:11.005"/>
+</kw>
+<kw name="Then devo extrair todas as paginas" library="acme_gherk">
+<doc>Extrai os dados das paginas e baixa seus PDFs</doc>
+<kw name="Ler número maximo de paginas" library="acme">
+<var>${NUMERO}</var>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${page_links}</var>
+<arg>//a[contains(@href, "work-items?page=")]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.012" level="INFO">${page_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.29")&gt;, &lt;selenium.webdriv...</msg>
+<status status="PASS" starttime="20241203 13:19:11.006" endtime="20241203 13:19:11.012"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${page_numbers}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20241203 13:19:11.013" level="INFO">${page_numbers} = []</msg>
+<status status="PASS" starttime="20241203 13:19:11.013" endtime="20241203 13:19:11.013"/>
+</kw>
+<for flavor="IN">
+<var>${link}</var>
+<value>@{page_links}</value>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.29")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.021" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=2</msg>
+<status status="PASS" starttime="20241203 13:19:11.013" endtime="20241203 13:19:11.021"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.021" level="INFO">${number} = ['2']</msg>
+<status status="PASS" starttime="20241203 13:19:11.021" endtime="20241203 13:19:11.021"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.022" endtime="20241203 13:19:11.022"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.013" endtime="20241203 13:19:11.022"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.30")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.031" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=3</msg>
+<status status="PASS" starttime="20241203 13:19:11.022" endtime="20241203 13:19:11.031"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.031" level="INFO">${number} = ['3']</msg>
+<status status="PASS" starttime="20241203 13:19:11.031" endtime="20241203 13:19:11.031"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.031" endtime="20241203 13:19:11.031"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.022" endtime="20241203 13:19:11.031"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.31")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.037" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=4</msg>
+<status status="PASS" starttime="20241203 13:19:11.032" endtime="20241203 13:19:11.037"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.038" level="INFO">${number} = ['4']</msg>
+<status status="PASS" starttime="20241203 13:19:11.037" endtime="20241203 13:19:11.038"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.038" endtime="20241203 13:19:11.038"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.031" endtime="20241203 13:19:11.038"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.32")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.044" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=5</msg>
+<status status="PASS" starttime="20241203 13:19:11.038" endtime="20241203 13:19:11.044"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.045" level="INFO">${number} = ['5']</msg>
+<status status="PASS" starttime="20241203 13:19:11.044" endtime="20241203 13:19:11.045"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.045" endtime="20241203 13:19:11.045"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.038" endtime="20241203 13:19:11.045"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.33")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.050" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=6</msg>
+<status status="PASS" starttime="20241203 13:19:11.045" endtime="20241203 13:19:11.050"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.051" level="INFO">${number} = ['6']</msg>
+<status status="PASS" starttime="20241203 13:19:11.050" endtime="20241203 13:19:11.051"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.051" endtime="20241203 13:19:11.051"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.045" endtime="20241203 13:19:11.051"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.34")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.057" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=7</msg>
+<status status="PASS" starttime="20241203 13:19:11.051" endtime="20241203 13:19:11.057"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.057" level="INFO">${number} = ['7']</msg>
+<status status="PASS" starttime="20241203 13:19:11.057" endtime="20241203 13:19:11.057"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.057" endtime="20241203 13:19:11.057"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.051" endtime="20241203 13:19:11.058"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.35")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.062" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=8</msg>
+<status status="PASS" starttime="20241203 13:19:11.058" endtime="20241203 13:19:11.062"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.062" level="INFO">${number} = ['8']</msg>
+<status status="PASS" starttime="20241203 13:19:11.062" endtime="20241203 13:19:11.062"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.062" endtime="20241203 13:19:11.063"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.058" endtime="20241203 13:19:11.063"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.36")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.068" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=9</msg>
+<status status="PASS" starttime="20241203 13:19:11.063" endtime="20241203 13:19:11.068"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.068" level="INFO">${number} = ['9']</msg>
+<status status="PASS" starttime="20241203 13:19:11.068" endtime="20241203 13:19:11.068"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.068" endtime="20241203 13:19:11.069"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.063" endtime="20241203 13:19:11.069"/>
+</iter>
+<iter>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.37")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${href}</var>
+<arg>${link}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.073" level="INFO">${href} = https://acme-test.uipath.com/work-items?page=2</msg>
+<status status="PASS" starttime="20241203 13:19:11.069" endtime="20241203 13:19:11.074"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${number}</var>
+<arg>${href}</arg>
+<arg>work-items\\?page=(\\d+)</arg>
+<arg>1</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20241203 13:19:11.074" level="INFO">${number} = ['2']</msg>
+<status status="PASS" starttime="20241203 13:19:11.074" endtime="20241203 13:19:11.074"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${page_numbers}</arg>
+<arg>${number[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:11.074" endtime="20241203 13:19:11.074"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.069" endtime="20241203 13:19:11.074"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:11.013" endtime="20241203 13:19:11.074"/>
+</for>
+<kw name="Evaluate" library="BuiltIn">
+<var>${largest_page}</var>
+<arg>max(map(int, ${page_numbers}))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241203 13:19:11.075" level="INFO">${largest_page} = 9</msg>
+<status status="PASS" starttime="20241203 13:19:11.074" endtime="20241203 13:19:11.075"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${largest_page}</var>
+<arg>${largest_page}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20241203 13:19:11.075" level="INFO">${largest_page} = 9</msg>
+<status status="PASS" starttime="20241203 13:19:11.075" endtime="20241203 13:19:11.075"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Tipo de dado: ${largest_page} é ${largest_page.__class__.__name__}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20241203 13:19:11.075" level="INFO">Tipo de dado: 9 é int</msg>
+<status status="PASS" starttime="20241203 13:19:11.075" endtime="20241203 13:19:11.075"/>
+</kw>
+<return>
+<value>${largest_page}</value>
+<status status="PASS" starttime="20241203 13:19:11.075" endtime="20241203 13:19:11.075"/>
+</return>
+<msg timestamp="20241203 13:19:11.075" level="INFO">${NUMERO} = 9</msg>
+<status status="PASS" starttime="20241203 13:19:11.005" endtime="20241203 13:19:11.075"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Tipo de dado: ${NUMERO} é ${NUMERO.__class__.__name__}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20241203 13:19:11.076" level="INFO">Tipo de dado: 9 é int</msg>
+<status status="PASS" starttime="20241203 13:19:11.075" endtime="20241203 13:19:11.076"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${todas_as_paginas}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20241203 13:19:11.076" level="INFO">${todas_as_paginas} = []</msg>
+<status status="PASS" starttime="20241203 13:19:11.076" endtime="20241203 13:19:11.076"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO -1}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.083" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.3D57F04AC65E9F4DA58533F8831F504B.e.38")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:11.076" endtime="20241203 13:19:11.083"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:11.351" level="INFO">${Itens} = [['99406346', 'Research Client Check Copy', 'WI2', 'Open', '2018-12-29'], ['99406320', 'Generate Yearly Report for Vendor', 'WI4', 'Open', '2021-08-31'], ['99406374', 'Verify Account Position', 'WI1',...</msg>
+<status status="PASS" starttime="20241203 13:19:11.083" endtime="20241203 13:19:11.351"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:11.351" endtime="20241203 13:19:11.351"/>
+</return>
+<msg timestamp="20241203 13:19:11.351" level="INFO">${lista_de_itens} = [['99406346', 'Research Client Check Copy', 'WI2', 'Open', '2018-12-29'], ['99406320', 'Generate Yearly Report for Vendor', 'WI4', 'Open', '2021-08-31'], ['99406374', 'Verify Account Position', 'WI1',...</msg>
+<status status="PASS" starttime="20241203 13:19:11.076" endtime="20241203 13:19:11.351"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:11.352" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:11.351" endtime="20241203 13:19:13.278"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.351" endtime="20241203 13:19:13.278"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.351" endtime="20241203 13:19:13.278"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:11.351" endtime="20241203 13:19:13.278"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:11.351" endtime="20241203 13:19:13.278"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:13.278" endtime="20241203 13:19:13.278"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:11.076" endtime="20241203 13:19:13.278"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">1</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:13.286" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.B69C34F55B86E81765EED51D24E725C9.e.113")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:13.279" endtime="20241203 13:19:13.286"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:13.542" level="INFO">${Itens} = [['99406354', 'Research Client Check Copy', 'WI2', 'Open', '2018-07-20'], ['99406298', 'Calculate Client Security Hash', 'WI5', 'Completed', '2020-09-07'], ['99406360', 'Research Client Check Copy', '...</msg>
+<status status="PASS" starttime="20241203 13:19:13.286" endtime="20241203 13:19:13.542"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:13.542" endtime="20241203 13:19:13.542"/>
+</return>
+<msg timestamp="20241203 13:19:13.542" level="INFO">${lista_de_itens} = [['99406354', 'Research Client Check Copy', 'WI2', 'Open', '2018-07-20'], ['99406298', 'Calculate Client Security Hash', 'WI5', 'Completed', '2020-09-07'], ['99406360', 'Research Client Check Copy', '...</msg>
+<status status="PASS" starttime="20241203 13:19:13.279" endtime="20241203 13:19:13.542"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:13.543" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:13.543" endtime="20241203 13:19:15.457"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:13.543" endtime="20241203 13:19:15.458"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:13.543" endtime="20241203 13:19:15.458"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:13.543" endtime="20241203 13:19:15.458"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:13.542" endtime="20241203 13:19:15.458"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:15.458" endtime="20241203 13:19:15.459"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:13.279" endtime="20241203 13:19:15.459"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">2</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:15.465" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.98FB30F52451121A185B8C72F3F3C316.e.187")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:15.459" endtime="20241203 13:19:15.465"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:15.760" level="INFO">${Itens} = [['99406355', 'Research Client Check Copy', 'WI2', 'Open', '2022-02-18'], ['99406323', 'Process Vendor Invoice', 'WI3', 'Open', '2017-08-07'], ['99406379', 'Verify Account Position', 'WI1', 'Open', '2...</msg>
+<status status="PASS" starttime="20241203 13:19:15.465" endtime="20241203 13:19:15.760"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:15.760" endtime="20241203 13:19:15.760"/>
+</return>
+<msg timestamp="20241203 13:19:15.760" level="INFO">${lista_de_itens} = [['99406355', 'Research Client Check Copy', 'WI2', 'Open', '2022-02-18'], ['99406323', 'Process Vendor Invoice', 'WI3', 'Open', '2017-08-07'], ['99406379', 'Verify Account Position', 'WI1', 'Open', '2...</msg>
+<status status="PASS" starttime="20241203 13:19:15.459" endtime="20241203 13:19:15.760"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:15.761" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:15.761" endtime="20241203 13:19:18.127"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:15.760" endtime="20241203 13:19:18.127"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:15.760" endtime="20241203 13:19:18.127"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:15.760" endtime="20241203 13:19:18.127"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:15.760" endtime="20241203 13:19:18.127"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:18.127" endtime="20241203 13:19:18.128"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:15.459" endtime="20241203 13:19:18.128"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">3</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:18.136" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.15B265EA6C52A4A84C0E88530323B68C.e.261")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:18.129" endtime="20241203 13:19:18.136"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:18.393" level="INFO">${Itens} = [['99406362', 'Research Client Check Copy', 'WI2', 'Open', '2019-04-09'], ['99406321', 'Generate Yearly Report for Vendor', 'WI4', 'Open', '2019-11-04'], ['99406312', 'Generate Yearly Report for Vendo...</msg>
+<status status="PASS" starttime="20241203 13:19:18.136" endtime="20241203 13:19:18.393"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:18.393" endtime="20241203 13:19:18.393"/>
+</return>
+<msg timestamp="20241203 13:19:18.394" level="INFO">${lista_de_itens} = [['99406362', 'Research Client Check Copy', 'WI2', 'Open', '2019-04-09'], ['99406321', 'Generate Yearly Report for Vendor', 'WI4', 'Open', '2019-11-04'], ['99406312', 'Generate Yearly Report for Vendo...</msg>
+<status status="PASS" starttime="20241203 13:19:18.129" endtime="20241203 13:19:18.394"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:18.394" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:18.394" endtime="20241203 13:19:20.299"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:18.394" endtime="20241203 13:19:20.299"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:18.394" endtime="20241203 13:19:20.299"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:18.394" endtime="20241203 13:19:20.300"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:18.394" endtime="20241203 13:19:20.300"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:20.300" endtime="20241203 13:19:20.300"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:18.129" endtime="20241203 13:19:20.300"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">4</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:20.306" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.2B0F75FB3BD6B95AC61A0D37C232A33B.e.335")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:20.301" endtime="20241203 13:19:20.306"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:20.604" level="INFO">${Itens} = [['99406334', 'Research Client Check Copy', 'WI2', 'Open', '2023-07-18'], ['99406352', 'Research Client Check Copy', 'WI2', 'Open', '2017-11-02'], ['99406331', 'Process Vendor Invoice', 'WI3', 'Open',...</msg>
+<status status="PASS" starttime="20241203 13:19:20.306" endtime="20241203 13:19:20.604"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:20.604" endtime="20241203 13:19:20.604"/>
+</return>
+<msg timestamp="20241203 13:19:20.604" level="INFO">${lista_de_itens} = [['99406334', 'Research Client Check Copy', 'WI2', 'Open', '2023-07-18'], ['99406352', 'Research Client Check Copy', 'WI2', 'Open', '2017-11-02'], ['99406331', 'Process Vendor Invoice', 'WI3', 'Open',...</msg>
+<status status="PASS" starttime="20241203 13:19:20.300" endtime="20241203 13:19:20.604"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:20.605" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:20.605" endtime="20241203 13:19:22.609"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:20.605" endtime="20241203 13:19:22.609"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:20.604" endtime="20241203 13:19:22.609"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:20.604" endtime="20241203 13:19:22.609"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:20.604" endtime="20241203 13:19:22.609"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:22.609" endtime="20241203 13:19:22.610"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:20.300" endtime="20241203 13:19:22.610"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">5</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:22.615" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.427BD0BBFCCC365BDE7BA6154A3D7CA3.e.410")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:22.610" endtime="20241203 13:19:22.615"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:22.896" level="INFO">${Itens} = [['99406324', 'Process Vendor Invoice', 'WI3', 'Open', '2021-08-06'], ['99406365', 'Verify Account Position', 'WI1', 'Open', '2017-07-08'], ['99406327', 'Process Vendor Invoice', 'WI3', 'Open', '2021-...</msg>
+<status status="PASS" starttime="20241203 13:19:22.615" endtime="20241203 13:19:22.896"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:22.896" endtime="20241203 13:19:22.896"/>
+</return>
+<msg timestamp="20241203 13:19:22.896" level="INFO">${lista_de_itens} = [['99406324', 'Process Vendor Invoice', 'WI3', 'Open', '2021-08-06'], ['99406365', 'Verify Account Position', 'WI1', 'Open', '2017-07-08'], ['99406327', 'Process Vendor Invoice', 'WI3', 'Open', '2021-...</msg>
+<status status="PASS" starttime="20241203 13:19:22.610" endtime="20241203 13:19:22.896"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:22.897" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:22.897" endtime="20241203 13:19:24.884"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:22.897" endtime="20241203 13:19:24.884"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:22.897" endtime="20241203 13:19:24.884"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:22.897" endtime="20241203 13:19:24.884"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:22.896" endtime="20241203 13:19:24.884"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:24.885" endtime="20241203 13:19:24.885"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:22.610" endtime="20241203 13:19:24.885"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">6</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:24.891" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.0721F888FA6569CA18CC1EF02822F02A.e.484")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:24.885" endtime="20241203 13:19:24.891"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:25.159" level="INFO">${Itens} = [['99406335', 'Research Client Check Copy', 'WI2', 'Open', '2021-01-14'], ['99406305', 'Calculate Client Security Hash', 'WI5', 'Completed', '2019-01-20'], ['99406317', 'Generate Yearly Report for Ven...</msg>
+<status status="PASS" starttime="20241203 13:19:24.891" endtime="20241203 13:19:25.159"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:25.159" endtime="20241203 13:19:25.159"/>
+</return>
+<msg timestamp="20241203 13:19:25.160" level="INFO">${lista_de_itens} = [['99406335', 'Research Client Check Copy', 'WI2', 'Open', '2021-01-14'], ['99406305', 'Calculate Client Security Hash', 'WI5', 'Completed', '2019-01-20'], ['99406317', 'Generate Yearly Report for Ven...</msg>
+<status status="PASS" starttime="20241203 13:19:24.885" endtime="20241203 13:19:25.160"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:25.161" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:25.160" endtime="20241203 13:19:27.064"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:25.160" endtime="20241203 13:19:27.064"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:25.160" endtime="20241203 13:19:27.064"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:25.160" endtime="20241203 13:19:27.064"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:25.160" endtime="20241203 13:19:27.064"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:27.064" endtime="20241203 13:19:27.065"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:24.885" endtime="20241203 13:19:27.065"/>
+</iter>
+<iter>
+<var name="${NUMERODAPAGINA}">7</var>
+<kw name="Extrair Dados da Tabela" library="acme">
+<var>${lista_de_itens}</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${table}</var>
+<arg>xpath=//table[@class="table"]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20241203 13:19:27.075" level="INFO">${table} = &lt;selenium.webdriver.remote.webelement.WebElement (session="088220ce3ea0e169a267eda2b6c84722", element="f.9A68D9AC4E478651A7E4586D6D994208.d.FC171ACF2C64FCE80A9415C2D172AE43.e.558")&gt;</msg>
+<status status="PASS" starttime="20241203 13:19:27.066" endtime="20241203 13:19:27.075"/>
+</kw>
+<kw name="Extract Table Data" library="tableHelper">
+<var>${Itens}</var>
+<arg>${table}</arg>
+<doc>Extrai os dados da tabela no formato de lista de listas.
+:param table_xpath: XPath para localizar a tabela.
+:return: Lista de listas representando os dados da tabela.</doc>
+<msg timestamp="20241203 13:19:27.369" level="INFO">${Itens} = [['99406372', 'Verify Account Position', 'WI1', 'Open', '2020-11-06'], ['99406295', 'Calculate Client Security Hash', 'WI5', 'Completed', '2018-12-24'], ['99406300', 'Calculate Client Security Hash', ...</msg>
+<status status="PASS" starttime="20241203 13:19:27.075" endtime="20241203 13:19:27.369"/>
+</kw>
+<return>
+<value>${Itens}</value>
+<status status="PASS" starttime="20241203 13:19:27.369" endtime="20241203 13:19:27.369"/>
+</return>
+<msg timestamp="20241203 13:19:27.369" level="INFO">${lista_de_itens} = [['99406372', 'Verify Account Position', 'WI1', 'Open', '2020-11-06'], ['99406295', 'Calculate Client Security Hash', 'WI5', 'Completed', '2018-12-24'], ['99406300', 'Calculate Client Security Hash', ...</msg>
+<status status="PASS" starttime="20241203 13:19:27.065" endtime="20241203 13:19:27.369"/>
+</kw>
+<kw name="devo avancar 1 pagina(s)" library="acme_gherk" sourcename="devo avancar ${NUMERO} pagina(s)">
+<for flavor="IN RANGE">
+<var>${NUMERODAPAGINA}</var>
+<value>${NUMERO}</value>
+<iter>
+<var name="${NUMERODAPAGINA}">0</var>
+<kw name="Avancar Pagina" library="acme">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//li//a[contains(@aria-label, "Next")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:27.370" level="INFO">Clicking element 'xpath=//li//a[contains(@aria-label, "Next")]'.</msg>
+<status status="PASS" starttime="20241203 13:19:27.370" endtime="20241203 13:19:29.338"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:27.370" endtime="20241203 13:19:29.338"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:27.370" endtime="20241203 13:19:29.338"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:27.370" endtime="20241203 13:19:29.338"/>
+</for>
+<status status="PASS" starttime="20241203 13:19:27.369" endtime="20241203 13:19:29.338"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${todas_as_paginas}</arg>
+<arg>${lista_de_itens[0]}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20241203 13:19:29.338" endtime="20241203 13:19:29.339"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:27.065" endtime="20241203 13:19:29.339"/>
+</iter>
+<status status="PASS" starttime="20241203 13:19:11.076" endtime="20241203 13:19:29.339"/>
+</for>
+<for flavor="IN">
+<var>${item_da_lista}</var>
+<value>${todas_as_paginas}</value>
+<iter>
+<var name="${item_da_lista}">[['99406346', 'Research Client Check Copy', 'WI2', 'Open', '2018-12-29'], ['99406354', 'Research Client Check Copy', 'WI2', 'Open', '2018-07-20'], ['99406355', 'Research Client Check Copy', 'WI2', 'Op...</var>
+<kw name="Abrir PDF em nova Aba" library="acme">
+<arg>${item_da_lista}</arg>
+<doc>Abre todos os PDFs de uma página</doc>
+<for flavor="IN">
+<var>${linha_de_itens}</var>
+<value>@{lista_de_itens}</value>
+<iter>
+<var name="${linha_de_itens}">['99406346', 'Research Client Check Copy', 'WI2', 'Open', '2018-12-29']</var>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:29.340" endtime="20241203 13:19:29.345"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241203 13:19:29.346" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20241203 13:19:29.345" endtime="20241203 13:19:29.388"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:31.404" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241203 13:19:29.389" endtime="20241203 13:19:31.404"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:31.404" endtime="20241203 13:19:31.409"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://acme-test.uipath.com/work-items/${linha_de_itens[0]}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241203 13:19:31.410" level="INFO">Opening url 'https://acme-test.uipath.com/work-items/99406346'</msg>
+<status status="PASS" starttime="20241203 13:19:31.409" endtime="20241203 13:19:33.355"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<arg>Espera página carregar</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:35.356" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20241203 13:19:35.356" level="INFO">Espera página carregar</msg>
+<status status="PASS" starttime="20241203 13:19:33.355" endtime="20241203 13:19:35.356"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[contains(text(), 'Download Check Request')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:35.356" level="INFO">Clicking element '//button[contains(text(), 'Download Check Request')]'.</msg>
+<status status="PASS" starttime="20241203 13:19:35.356" endtime="20241203 13:19:35.471"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<arg>Espera abrir o PDF</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:36.482" level="INFO">Slept 1 second</msg>
+<msg timestamp="20241203 13:19:36.482" level="INFO">Espera abrir o PDF</msg>
+<status status="PASS" starttime="20241203 13:19:35.471" endtime="20241203 13:19:36.482"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20241203 13:19:36.482" endtime="20241203 13:19:36.544"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:37.560" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241203 13:19:36.545" endtime="20241203 13:19:37.560"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:29.340" endtime="20241203 13:19:37.560"/>
+</iter>
+<iter>
+<var name="${linha_de_itens}">['99406354', 'Research Client Check Copy', 'WI2', 'Open', '2018-07-20']</var>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:37.560" endtime="20241203 13:19:37.562"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241203 13:19:37.563" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20241203 13:19:37.563" endtime="20241203 13:19:37.602"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:39.609" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241203 13:19:37.602" endtime="20241203 13:19:39.609"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:39.609" endtime="20241203 13:19:39.614"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://acme-test.uipath.com/work-items/${linha_de_itens[0]}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241203 13:19:39.614" level="INFO">Opening url 'https://acme-test.uipath.com/work-items/99406354'</msg>
+<status status="PASS" starttime="20241203 13:19:39.614" endtime="20241203 13:19:41.537"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<arg>Espera página carregar</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:43.546" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20241203 13:19:43.546" level="INFO">Espera página carregar</msg>
+<status status="PASS" starttime="20241203 13:19:41.537" endtime="20241203 13:19:43.546"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[contains(text(), 'Download Check Request')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:43.547" level="INFO">Clicking element '//button[contains(text(), 'Download Check Request')]'.</msg>
+<status status="PASS" starttime="20241203 13:19:43.546" endtime="20241203 13:19:43.664"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<arg>Espera abrir o PDF</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:44.675" level="INFO">Slept 1 second</msg>
+<msg timestamp="20241203 13:19:44.675" level="INFO">Espera abrir o PDF</msg>
+<status status="PASS" starttime="20241203 13:19:43.664" endtime="20241203 13:19:44.675"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20241203 13:19:44.675" endtime="20241203 13:19:44.738"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:45.754" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241203 13:19:44.739" endtime="20241203 13:19:45.754"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:37.560" endtime="20241203 13:19:45.754"/>
+</iter>
+<iter>
+<var name="${linha_de_itens}">['99406355', 'Research Client Check Copy', 'WI2', 'Open', '2022-02-18']</var>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:45.754" endtime="20241203 13:19:45.757"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241203 13:19:45.757" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20241203 13:19:45.757" endtime="20241203 13:19:45.789"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:47.796" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241203 13:19:45.790" endtime="20241203 13:19:47.796"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:47.796" endtime="20241203 13:19:47.802"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://acme-test.uipath.com/work-items/${linha_de_itens[0]}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241203 13:19:47.802" level="INFO">Opening url 'https://acme-test.uipath.com/work-items/99406355'</msg>
+<status status="PASS" starttime="20241203 13:19:47.802" endtime="20241203 13:19:49.839"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<arg>Espera página carregar</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:51.850" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20241203 13:19:51.850" level="INFO">Espera página carregar</msg>
+<status status="PASS" starttime="20241203 13:19:49.839" endtime="20241203 13:19:51.850"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[contains(text(), 'Download Check Request')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:19:51.850" level="INFO">Clicking element '//button[contains(text(), 'Download Check Request')]'.</msg>
+<status status="PASS" starttime="20241203 13:19:51.850" endtime="20241203 13:19:51.963"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<arg>Espera abrir o PDF</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:52.978" level="INFO">Slept 1 second</msg>
+<msg timestamp="20241203 13:19:52.978" level="INFO">Espera abrir o PDF</msg>
+<status status="PASS" starttime="20241203 13:19:51.964" endtime="20241203 13:19:52.978"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20241203 13:19:52.978" endtime="20241203 13:19:53.041"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:54.047" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241203 13:19:53.041" endtime="20241203 13:19:54.047"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:45.754" endtime="20241203 13:19:54.047"/>
+</iter>
+<iter>
+<var name="${linha_de_itens}">['99406362', 'Research Client Check Copy', 'WI2', 'Open', '2019-04-09']</var>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:54.047" endtime="20241203 13:19:54.050"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241203 13:19:54.050" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20241203 13:19:54.050" endtime="20241203 13:19:54.086"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:19:56.089" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241203 13:19:54.086" endtime="20241203 13:19:56.089"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:19:56.089" endtime="20241203 13:19:56.097"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://acme-test.uipath.com/work-items/${linha_de_itens[0]}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241203 13:19:56.098" level="INFO">Opening url 'https://acme-test.uipath.com/work-items/99406362'</msg>
+<status status="PASS" starttime="20241203 13:19:56.097" endtime="20241203 13:19:58.555"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<arg>Espera página carregar</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:00.561" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20241203 13:20:00.561" level="INFO">Espera página carregar</msg>
+<status status="PASS" starttime="20241203 13:19:58.555" endtime="20241203 13:20:00.561"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[contains(text(), 'Download Check Request')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:20:00.561" level="INFO">Clicking element '//button[contains(text(), 'Download Check Request')]'.</msg>
+<status status="PASS" starttime="20241203 13:20:00.561" endtime="20241203 13:20:00.674"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<arg>Espera abrir o PDF</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:01.689" level="INFO">Slept 1 second</msg>
+<msg timestamp="20241203 13:20:01.689" level="INFO">Espera abrir o PDF</msg>
+<status status="PASS" starttime="20241203 13:20:00.674" endtime="20241203 13:20:01.689"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20241203 13:20:01.689" endtime="20241203 13:20:01.753"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:02.764" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241203 13:20:01.754" endtime="20241203 13:20:02.764"/>
+</kw>
+<status status="PASS" starttime="20241203 13:19:54.047" endtime="20241203 13:20:02.764"/>
+</iter>
+<iter>
+<var name="${linha_de_itens}">['99406334', 'Research Client Check Copy', 'WI2', 'Open', '2023-07-18']</var>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:20:02.764" endtime="20241203 13:20:02.767"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241203 13:20:02.767" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20241203 13:20:02.767" endtime="20241203 13:20:02.806"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:04.815" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241203 13:20:02.806" endtime="20241203 13:20:04.815"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:20:04.815" endtime="20241203 13:20:04.822"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://acme-test.uipath.com/work-items/${linha_de_itens[0]}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241203 13:20:04.823" level="INFO">Opening url 'https://acme-test.uipath.com/work-items/99406334'</msg>
+<status status="PASS" starttime="20241203 13:20:04.822" endtime="20241203 13:20:06.791"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<arg>Espera página carregar</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:08.793" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20241203 13:20:08.793" level="INFO">Espera página carregar</msg>
+<status status="PASS" starttime="20241203 13:20:06.792" endtime="20241203 13:20:08.793"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[contains(text(), 'Download Check Request')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:20:08.793" level="INFO">Clicking element '//button[contains(text(), 'Download Check Request')]'.</msg>
+<status status="PASS" starttime="20241203 13:20:08.793" endtime="20241203 13:20:08.900"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<arg>Espera abrir o PDF</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:09.901" level="INFO">Slept 1 second</msg>
+<msg timestamp="20241203 13:20:09.901" level="INFO">Espera abrir o PDF</msg>
+<status status="PASS" starttime="20241203 13:20:08.900" endtime="20241203 13:20:09.901"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20241203 13:20:09.901" endtime="20241203 13:20:09.964"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:10.978" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20241203 13:20:09.965" endtime="20241203 13:20:10.978"/>
+</kw>
+<status status="PASS" starttime="20241203 13:20:02.764" endtime="20241203 13:20:10.978"/>
+</iter>
+<iter>
+<var name="${linha_de_itens}">['99406324', 'Process Vendor Invoice', 'WI3', 'Open', '2021-08-06']</var>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:20:10.978" endtime="20241203 13:20:10.981"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20241203 13:20:10.981" level="INFO">Executing JavaScript:
+window.open('')
+Without any arguments.</msg>
+<status status="PASS" starttime="20241203 13:20:10.981" endtime="20241203 13:20:11.020"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:13.025" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20241203 13:20:11.020" endtime="20241203 13:20:13.025"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20241203 13:20:13.025" endtime="20241203 13:20:13.030"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://acme-test.uipath.com/work-items/${linha_de_itens[0]}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241203 13:20:13.030" level="INFO">Opening url 'https://acme-test.uipath.com/work-items/99406324'</msg>
+<status status="PASS" starttime="20241203 13:20:13.030" endtime="20241203 13:20:14.976"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<arg>Espera página carregar</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241203 13:20:16.988" level="INFO">Slept 2 seconds</msg>
+<msg timestamp="20241203 13:20:16.988" level="INFO">Espera página carregar</msg>
+<status status="PASS" starttime="20241203 13:20:14.976" endtime="20241203 13:20:16.988"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[contains(text(), 'Download Check Request')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241203 13:20:16.988" level="INFO">Clicking element '//button[contains(text(), 'Download Check Request')]'.</msg>
+<msg timestamp="20241203 13:20:17.033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20241203 13:20:17.033" level="FAIL">Element with locator '//button[contains(text(), 'Download Check Request')]' not found.</msg>
+<status status="FAIL" starttime="20241203 13:20:16.988" endtime="20241203 13:20:17.035"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<arg>Espera abrir o PDF</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20241203 13:20:17.035" endtime="20241203 13:20:17.035"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="NOT RUN" starttime="20241203 13:20:17.035" endtime="20241203 13:20:17.035"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20241203 13:20:17.035" endtime="20241203 13:20:17.035"/>
+</kw>
+<status status="FAIL" starttime="20241203 13:20:10.978" endtime="20241203 13:20:17.035"/>
+</iter>
+<status status="FAIL" starttime="20241203 13:19:29.339" endtime="20241203 13:20:17.035"/>
+</for>
+<status status="FAIL" starttime="20241203 13:19:29.339" endtime="20241203 13:20:17.035"/>
+</kw>
+<status status="FAIL" starttime="20241203 13:19:29.339" endtime="20241203 13:20:17.035"/>
+</iter>
+<status status="FAIL" starttime="20241203 13:19:29.339" endtime="20241203 13:20:17.035"/>
+</for>
+<status status="FAIL" starttime="20241203 13:19:11.005" endtime="20241203 13:20:17.035"/>
+</kw>
+<doc>Cenário: Extrair os dados da tabela do site, ir em cada item e baixar seu PDF</doc>
+<status status="FAIL" starttime="20241203 13:19:10.990" endtime="20241203 13:20:17.035">Element with locator '//button[contains(text(), 'Download Check Request')]' not found.</status>
+</test>
+<status status="FAIL" starttime="20241203 13:18:50.309" endtime="20241203 13:20:17.036"/>
+</suite>
+<status status="FAIL" starttime="20241203 13:18:50.288" endtime="20241203 13:20:17.037"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Tasks">Tasks</stat>
+<stat pass="2" fail="1" skip="0" id="s1-s1" name="Test Main">Tasks.Test Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
